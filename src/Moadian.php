@@ -1,19 +1,19 @@
 <?php
-namespace Jooyeshgar\Moadian;
+namespace Novaday\Moadian;
 
 use GuzzleHttp\Client;
-use Jooyeshgar\Moadian\Exceptions\MoadianException;
-use Jooyeshgar\Moadian\Http\EconomicCodeInformation;
-use Jooyeshgar\Moadian\Http\FiscalInfo;
-use Jooyeshgar\Moadian\Http\GetNonce;
-use Jooyeshgar\Moadian\Http\InquiryByReferenceNumber;
-use Jooyeshgar\Moadian\Http\InquiryByUid;
-use Jooyeshgar\Moadian\Http\Request;
-use Jooyeshgar\Moadian\Http\Response;
-use Jooyeshgar\Moadian\Http\SendInvoice;
-use Jooyeshgar\Moadian\Http\ServerInfo;
-use Jooyeshgar\Moadian\Services\EncryptionService;
-use Jooyeshgar\Moadian\Services\SignatureService;
+use Novaday\Moadian\Exceptions\MoadianException;
+use Novaday\Moadian\Http\EconomicCodeInformation;
+use Novaday\Moadian\Http\FiscalInfo;
+use Novaday\Moadian\Http\GetNonce;
+use Novaday\Moadian\Http\InquiryByReferenceNumber;
+use Novaday\Moadian\Http\InquiryByUid;
+use Novaday\Moadian\Http\Request;
+use Novaday\Moadian\Http\Response;
+use Novaday\Moadian\Http\SendInvoice;
+use Novaday\Moadian\Http\ServerInfo;
+use Novaday\Moadian\Services\EncryptionService;
+use Novaday\Moadian\Services\SignatureService;
 
 class Moadian
 {
