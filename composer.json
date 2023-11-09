@@ -19,14 +19,17 @@
         "php": "^7.1|^8.0",
         "ext-openssl": "*",
         "ext-json": "*",
-        "guzzlehttp/guzzle": "^6.5 || ^7.0",
-        "ramsey/uuid": "^3.9 || ^4.7",
+        "laravel/framework": "^6.0 || ^7.0 || ^8.0 || ^9.0 || ^10.0",
         "phpseclib/phpseclib": "^3.0",
         "firebase/php-jwt": "^6.4 || ^6.9"
     },
     "autoload": {
         "psr-4": {
-            "Novaday\\Moadian\\": "src/",
+            "Novaday\\Moadian\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "Novaday\\Moadian\\Tests\\": "tests/"
         }
     },
