@@ -1,20 +1,12 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Tests\Feature;
+namespace Novaday\Moadian\Tests\Feature;
 
-use DateTime;
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Response;
-use Jooyeshgar\Moadian\Moadian;
-use Jooyeshgar\Moadian\MoadianServiceProvider;
-use Jooyeshgar\Moadian\Tests\TestCase;
-use Mockery;
+use Novaday\Moadian\Moadian;
+use Novaday\Moadian\MoadianServiceProvider;
+use Novaday\Moadian\Tests\TestCase;
 use Ramsey\Uuid\Uuid;
 use Illuminate\Contracts\Foundation\Application;
-use Jooyeshgar\Moadian\Invoice;
-use Jooyeshgar\Moadian\InvoiceHeader;
-use Jooyeshgar\Moadian\InvoiceItem;
-use Jooyeshgar\Moadian\Payment;
 
 class MoadianTest extends TestCase
 {

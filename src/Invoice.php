@@ -1,12 +1,12 @@
 <?php
 
-namespace Jooyeshgar\Moadian;
+namespace Novaday\Moadian;
 
 class Invoice
 {
-    private InvoiceHeader $header;
-    private array $body = [];
-    private array $payments = [];
+    private $header;
+    private $body = [];
+    private $payments = [];
 
     public $retry = false;
     

@@ -1,19 +1,19 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Services;
+namespace Novaday\Moadian\Services;
 
 use GuzzleHttp\Client;
-use Jooyeshgar\Moadian\Exceptions\MoadianException;
-use Jooyeshgar\Moadian\Http\{EconomicCodeInformation, Packet, ServerInfoPacket, GetTokenPacket, FiscalInfoPacket, InquiryByReferenceNumber, InquiryByUid, invoicePacket, Request, Response};
-use Jooyeshgar\Moadian\Invoice;
+use Novaday\Moadian\Exceptions\MoadianException;
+use Novaday\Moadian\Http\{EconomicCodeInformation, Packet, ServerInfoPacket, GetTokenPacket, FiscalInfoPacket, InquiryByReferenceNumber, InquiryByUid, invoicePacket, Request, Response};
+use Novaday\Moadian\Invoice;
 
 class ApiClient
 {
-    private Client $httpClient;
-    private SignatureService $signer;
-    private EncryptionService $encryptor;
+    private $httpClient;
+    private $signer;
+    private $encryptor;
     private $token;
-    private Response $response;
+    private $response;
     private $username;
 
     public function __construct($username, $privateKey, $baseUri = 'https://tp.tax.gov.ir/')

@@ -1,10 +1,8 @@
 <?php
-namespace Jooyeshgar\Moadian;
+namespace Novaday\Moadian;
 
-use GuzzleHttp\Client;
-use Jooyeshgar\Moadian\Exceptions\MoadianException;
-use Jooyeshgar\Moadian\Services\ApiClient;
-use Ramsey\Uuid\Uuid;
+use Novaday\Moadian\Exceptions\MoadianException;
+use Novaday\Moadian\Services\ApiClient;
 
 class Moadian
 {
@@ -12,7 +10,7 @@ class Moadian
 
     protected $privateKey;
 
-    protected ApiClient $client;
+    protected $client;
 
     public function __construct($username, $privateKey, $baseUri ='https://tp.tax.gov.ir/')
     {

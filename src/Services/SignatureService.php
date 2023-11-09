@@ -1,12 +1,12 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Services;
+namespace Novaday\Moadian\Services;
 
-use Jooyeshgar\Moadian\Exceptions\MoadianException;
+use Novaday\Moadian\Exceptions\MoadianException;
 
 class SignatureService
 {
-    private string $privateKey;
+    private $privateKey;
 
     public function __construct(string $privateKey)
     {
@@ -46,7 +46,7 @@ class SignatureService
             if ($value === '' || $value === null) {
                 $value = '#';
             }
-            elseif (str_contains($value, '#')){
+            elseif (strpos($value, '#') !== false){
                 $value = str_replace('#', '##', $value);
             }
 

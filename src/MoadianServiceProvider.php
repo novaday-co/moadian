@@ -1,6 +1,6 @@
 <?php
 
-namespace Jooyeshgar\Moadian;
+namespace Novaday\Moadian;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -17,7 +17,7 @@ class MoadianServiceProvider extends ServiceProvider
             __DIR__.'/config/moadian.php', 'moadian'
         );
 
-        $this->app->bind('Jooyeshgar\Moadian\Moadian', function ($app) {
+        $this->app->bind('Novaday\Moadian\Moadian', function ($app) {
 
             $config = $app['config']['moadian'];
 

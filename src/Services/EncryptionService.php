@@ -1,8 +1,7 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Services;
+namespace Novaday\Moadian\Services;
 
-use Jooyeshgar\Moadian\Exceptions\MoadianException;
 use phpseclib3\Crypt\RSA;
 
 class EncryptionService
@@ -12,11 +11,11 @@ class EncryptionService
     /**
      * @var		string	$publicKey Must be get by getServerInfo
      */
-    public string $publicKey = '';
+    public $publicKey = '';
     /**
      * @var		string	$KeyId Must be get by getServerInfo
      */
-    public string $KeyId = '';
+    public $KeyId = '';
 
     public function __construct($publicKey = '', $KeyId = '')
     {

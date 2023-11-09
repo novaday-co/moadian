@@ -1,23 +1,23 @@
 <?php 
 
-namespace Jooyeshgar\Moadian\Http;
+namespace Novaday\Moadian\Http;
 
-use Ramsey\Uuid\Nonstandard\Uuid;
+use Ramsey\Uuid\Uuid;
 
 class Request
 {
     // Headers fields
-    public string $authorization;
-    public string $requestTraceId;
-    public string $timestamp = '';
+    public $authorization;
+    public $requestTraceId;
+    public $timestamp = '';
 
     // Body fields
-    private ?Packet  $packet = null; 
-    private array    $packets = [];
-    public  string   $signature;
-    public  ?string  $signatureKeyId = null;
+    private $packet = null;
+    private $packets = [];
+    public $signature;
+    public $signatureKeyId = null;
 
-    public bool $needToken = false;
+    public $needToken = false;
 
     public function __construct() 
     {

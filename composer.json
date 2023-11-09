@@ -1,38 +1,43 @@
 {
-    "name": "jooyeshgar/moadian",
-    "description": "Laravel package for interacting with the Moadian API of intamedia.ir",
+    "name": "novaday-co/moadian",
+    "description": "Fork of jooyeshgar/moadian Laravel package for interacting with the Moadian API of intamedia.ir",
     "type": "library",
     "keywords": ["laravel", "moadian", "intamedia"],
-    "homepage": "https://github.com/Jooyeshgar/moadian",
+    "homepage": "https://github.com/novaday-co/moadian",
     "license": "GPL-3.0",
     "authors": [
         {
             "name": "Hadi Aminzadeh",
             "email": "hadi60@gmail.com"
+        },
+        {
+            "name": "Amirmohammad Nafariyeh",
+            "email": "amirsobhan1553@gmail.com"
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^7.1|^8.0",
         "ext-openssl": "*",
-        "guzzlehttp/guzzle": "^7.0",
-        "ramsey/uuid": "^4.2",
-        "symfony/cache": "^5.3|^6.0",
-        "phpseclib/phpseclib": "^3.0"
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^6.5 || ^7.0",
+        "ramsey/uuid": "^3.9 || ^4.7",
+        "phpseclib/phpseclib": "^3.0",
+        "firebase/php-jwt": "^6.4 || ^6.9"
     },
     "autoload": {
         "psr-4": {
-            "Jooyeshgar\\Moadian\\": "src/",
-            "Jooyeshgar\\Moadian\\Tests\\": "tests/"
+            "Novaday\\Moadian\\": "src/",
+            "Novaday\\Moadian\\Tests\\": "tests/"
         }
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.0 || ^10.0",
-        "mockery/mockery": "^1.5"
+        "phpunit/phpunit": "^7.0 || ^10.0",
+        "mockery/mockery": "^1.3 || ^1.5"
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Jooyeshgar\\Moadian\\MoadianServiceProvider"
+                "Novaday\\Moadian\\MoadianServiceProvider"
             ]
         }
     }

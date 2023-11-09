@@ -1,6 +1,6 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Tests;
+namespace Novaday\Moadian\Tests;
 
 use PHPUnit\Framework\TestCase as BaseTestCase;
 

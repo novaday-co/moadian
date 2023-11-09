@@ -1,158 +1,158 @@
 <?php
 
-namespace Jooyeshgar\Moadian;
+namespace Novaday\Moadian;
 
 class InvoiceItem
 {
 /**
      * service stuff ID
      */
-    public string $sstid;
+    public $sstid;
 
     /**
      * service stuff title
      */
-    public ?string $sstt;
+    public $sstt;
 
     /**
      * amount
      */
-    public float $am;
+    public $am;
 
     /**
      * measurement unit
      */
-    public ?string $mu;
+    public $mu;
 
     /**
      * net weight
      */
-    public ?float $nw;
+    public $nw;
 
     /**
      * fee (pure price per item)
      */
-    public float $fee;
+    public $fee;
 
     /**
      * fee in foreign currency
      */
-    public ?float $cfee;
+    public $cfee;
 
     /**
      * currency type
      */
-    public ?string $cut;
+    public $cut;
 
     /**
      * exchange rate
      */
-    public ?float $exr;
+    public $exr;
 
     /**
      * service stuff Rial Value
      */
-    public ?float $ssrv;
+    public $ssrv;
 
     /**
      * service stuff currency value
      */
-    public ?float $sscv;
+    public $sscv;
 
     /**
      * pre discount
      */
-    public ?float $prdis;
+    public $prdis;
 
     /**
      * discount
      */
-    public ?float $dis;
+    public $dis;
 
     /**
      * after discount
      */
-    public ?float $adis;
+    public $adis;
 
     /**
      * VAT rate
      */
-    public float $vra;
+    public $vra;
 
     /**
      * VAT amount
      */
-    public float $vam;
+    public $vam;
 
     /**
      * other duty title
      */
-    public ?string $odt;
+    public $odt;
 
     /**
      * other duty rate
      */
-    public ?float $odr;
+    public $odr;
 
     /**
      * other duty amount
      */
-    public ?float $odam;
+    public $odam;
 
     /**
      * other legal title
      */
-    public ?string $olt;
+    public $olt;
 
     /**
      * other legal rate
      */
-    public ?float $olr;
+    public $olr;
 
     /**
      * other legal amount
      */
-    public ?float $olam;
+    public $olam;
 
     /**
      * construction fee
      */
-    public ?float $consfee;
+    public $consfee;
 
     /**
      * seller profit
      */
-    public ?float $spro;
+    public $spro;
 
     /**
      * broker salary
      */
-    public ?float $bros;
+    public $bros;
 
     /**
      * total construction profit broker salary
      */
-    public ?float $tcpbs;
+    public $tcpbs;
 
     /**
      * cash share of payment
      */
-    public ?float $cop;
+    public $cop;
 
     /**
      * vat of payment
      */
-    public ?float $vop;
+    public $vop;
 
     /**
      * buyer register number
      */
-    public ?string $bsrn;
+    public $bsrn;
 
     /**
      * total service stuff amount
      */
-    public float $tsstam;
+    public $tsstam;
 
     public function toArray(): array
     {

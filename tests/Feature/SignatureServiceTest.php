@@ -1,9 +1,9 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Tests\Feature;
+namespace Novaday\Moadian\Tests\Feature;
 
-use Jooyeshgar\Moadian\Services\SignatureService;
-use Jooyeshgar\Moadian\Tests\TestCase;
+use Novaday\Moadian\Services\SignatureService;
+use Novaday\Moadian\Tests\TestCase;
 
 class SignatureServiceTest extends TestCase
 {
