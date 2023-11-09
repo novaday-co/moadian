@@ -12,7 +12,7 @@ class SendInvoice extends Request
 {
     use HasToken;
 
-    private Invoice $invoice;
+    private $invoice;
 
     public function __construct(Invoice $invoice) {
 

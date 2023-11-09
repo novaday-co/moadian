@@ -2,24 +2,24 @@
 
 namespace Novaday\Moadian\Http;
 
-use Ramsey\Uuid\Nonstandard\Uuid;
+use Ramsey\Uuid\Uuid;
 
 class Packet
 {
     // Packet fields
-    public string $uid = '';
-    public string $packetType = "GET_SERVER_INFORMATION";
-    public bool $retry = false;
+    public $uid = '';
+    public $packetType = "GET_SERVER_INFORMATION";
+    public $retry = false;
     public $data;
-    public string $encryptionKeyId = '';
-    public string $symmetricKey = '';
-    public string $iv = '';
-    public string $fiscalId = '';
-    public string $dataSignature = '';
+    public $encryptionKeyId = '';
+    public $symmetricKey = '';
+    public $iv = '';
+    public $fiscalId = '';
+    public $dataSignature = '';
 
-    public string $path        = 'req/api/self-tsp/sync/GET_SERVER_INFORMATION';
-    public bool   $needToken   = false;
-    public bool   $needEncrypt = false;
+    public $path        = 'req/api/self-tsp/sync/GET_SERVER_INFORMATION';
+    public $needToken   = false;
+    public $needEncrypt = false;
    
 
     public function __construct() 

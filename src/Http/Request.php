@@ -7,12 +7,12 @@ use Novaday\Moadian\Services\SignatureService;
 
 abstract class Request
 {
-    public string $path;
-    public string $method = 'get';
+    public $path;
+    public $method = 'get';
 
-    protected array $headers;
-    protected array $body;
-    protected array $params;
+    protected $headers;
+    protected $body;
+    protected $params;
 
     public function __construct()
     {

@@ -10,192 +10,192 @@ class InvoiceHeader
     /**
      * MOADIAN_USERNAME
      */
-    public string $clientId;
+    public $clientId;
 
     /**
      * unique tax ID (should be set by setTaxID )
      */
-    public string $taxid;
+    public $taxid;
 
     /**
      * invoice timestamp (milliseconds from epoch)
      */
-    public int $indatim;
+    public $indatim;
 
     /**
      * invoice creation timestamp (milliseconds from epoch)
      */
-    public ?int $indati2m;
+    public $indati2m;
 
     /**
      * invoice type
      */
-    public int $inty;
+    public $inty;
 
     /**
      * internal invoice number
      */
-    public ?string $inno;
+    public $inno;
 
     /**
      * invoice reference tax ID
      */
-    public ?string $irtaxid;
+    public $irtaxid;
 
     /**
      * invoice pattern
      */
-    public int $inp;
+    public $inp;
 
     /**
      * invoice subject
      */
-    public int $ins;
+    public $ins;
 
     /**
      * seller tax identification number
      */
-    public string $tins;
+    public $tins;
 
     /**
      * type of buyer
      */
-    public ?int $tob;
+    public $tob;
 
     /**
      * buyer ID
      */
-    public ?string $bid;
+    public $bid;
 
     /**
      * buyer tax identification number
      */
-    public ?string $tinb;
+    public $tinb;
 
     /**
      * seller branch code
      */
-    public ?string $sbc;
+    public $sbc;
 
     /**
      * buyer postal code
      */
-    public ?string $bpc;
+    public $bpc;
 
     /**
      * buyer branch code
      */
-    public ?string $bbc;
+    public $bbc;
 
     /**
      * flight type
      */
-    public ?int $ft;
+    public $ft;
 
     /**
      * buyer passport number
      */
-    public ?string $bpn;
+    public $bpn;
 
     /**
      * seller customs licence number
      */
-    public ?string $scln;
+    public $scln;
 
     /**
      * seller customs code
      */
-    public ?string $scc;
+    public $scc;
 
     /**
      * contract registration number
      */
-    public ?string $crn;
+    public $crn;
 
     /**
      * customs declaration cottage number
      */
-    public ?string $cdcn;
+    public $cdcn;
 
     /**
      * customs declaration cottage date
      */
-    public ?int $cdcd;
+    public $cdcd;
 
     /**
      * billing ID
      */
-    public ?string $billid;
+    public $billid;
 
     /**
      * total pre discount
      */
-    public ?float $tprdis;
+    public $tprdis;
 
     /**
      * total discount
      */
-    public ?float $tdis;
+    public $tdis;
 
     /**
      * total after discount
      */
-    public ?float $tadis;
+    public $tadis;
 
     /**
      * total VAT amount
      */
-    public float $tvam;
+    public $tvam;
 
     /**
      * total other duty amount
      */
-    public ?float $todam;
+    public $todam;
 
     /**
      * total bill
      */
-    public float $tbill;
+    public $tbill;
 
     /**
      * total net weight
      */
-    public ?float $tonw;
+    public $tonw;
 
     /**
      * total Rial value
      */
-    public ?float $torv;
+    public $torv;
 
     /**
      * total currency value
      */
-    public ?float $tocv;
+    public $tocv;
 
     /**
      * settlement type
      */
-    public ?int $setm;
+    public $setm;
 
     /**
      * cash payment
      */
-    public ?float $cap;
+    public $cap;
 
     /**
      * installment payment
      */
-    public ?float $insp;
+    public $insp;
 
     /**
      * total VAT of payment
      */
-    public ?float $tvop;
+    public $tvop;
 
     /**
      * tax17
      */
-    public ?float $tax17;
+    public $tax17;
 
     public function __construct(string $username = null) {
         $this->clientId = $username;

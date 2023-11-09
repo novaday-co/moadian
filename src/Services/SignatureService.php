@@ -7,8 +7,8 @@ use Firebase\JWT\JWT;
 
 class SignatureService
 {
-    private string $privateKey;
-    private string $x5c;
+    private $privateKey;
+    private $x5c;
 
     public function __construct(string $privateKey, string $x5c)
     {
