@@ -1,6 +1,6 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Http;
+namespace Novaday\Moadian\Http;
 
 use Ramsey\Uuid\Nonstandard\Uuid;
 

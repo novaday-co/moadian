@@ -1,9 +1,9 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Traits;
+namespace Novaday\Moadian\Traits;
 
-use Jooyeshgar\Moadian\Facades\Moadian;
-use Jooyeshgar\Moadian\Services\SignatureService;
+use Novaday\Moadian\Facades\Moadian;
+use Novaday\Moadian\Services\SignatureService;
 
 trait HasToken
 {

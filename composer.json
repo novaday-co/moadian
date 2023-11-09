@@ -1,14 +1,18 @@
 {
-    "name": "jooyeshgar/moadian",
-    "description": "Laravel package for interacting with the Moadian API of intamedia.ir",
+    "name": "novaday-co/moadian",
+    "description": "Fork of jooyeshgar/moadian Laravel package for interacting with the Moadian API of intamedia.ir",
     "type": "library",
     "keywords": ["laravel", "moadian", "intamedia"],
-    "homepage": "https://github.com/Jooyeshgar/moadian",
+    "homepage": "https://github.com/novaday-co",
     "license": "GPL-3.0",
     "authors": [
         {
             "name": "Hadi Aminzadeh",
             "email": "hadi60@gmail.com"
+        },
+        {
+            "name": "Amirmohammad Nafariyeh",
+            "email": "amirsobhan1553@gmail.com"
         }
     ],
     "require": {
@@ -22,8 +26,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Jooyeshgar\\Moadian\\": "src/",
-            "Jooyeshgar\\Moadian\\Tests\\": "tests/"
+            "Novaday\\Moadian\\": "src/",
+            "Novaday\\Moadian\\Tests\\": "tests/"
         }
     },
     "require-dev": {
@@ -33,7 +37,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Jooyeshgar\\Moadian\\MoadianServiceProvider"
+                "Novaday\\Moadian\\MoadianServiceProvider"
             ]
         }
     }

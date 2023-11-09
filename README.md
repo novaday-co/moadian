@@ -10,7 +10,7 @@ This package requires Laravel 8 or higher. It has been tested with Laravel 8 and
 
 To install this package, simply run the following command:
 ```bash
-composer require jooyeshgar/moadian
+composer require novaday-co/moadian
 ```
 ## Usage
 
@@ -26,7 +26,7 @@ storage_path('app/keys/private.pem');
 You can then use the `Moadian` facade to interact with the Moadian API. Here are some examples:
 
 ```php
-use Jooyeshgar\Moadian\Facades\Moadian;
+use Novaday\Moadian\Facades\Moadian;
 
 // Get server info
 $info = Moadian::getServerInfo();
@@ -49,10 +49,10 @@ $info = Moadian::inquiryByReferenceNumbers(["a45aa663-6888-4025-a89d-86fc789672a
 To send an invoice to Moadian, you can use the sendInvoice() method provided by the plugin. Here's an example of how to use it:
 
 ```php
-use Jooyeshgar\Moadian\Invoice as MoadianInvoice;
-use Jooyeshgar\Moadian\InvoiceHeader;
-use Jooyeshgar\Moadian\InvoiceItem;
-use Jooyeshgar\Moadian\Payment;
+use Novaday\Moadian\Invoice as MoadianInvoice;
+use Novaday\Moadian\InvoiceHeader;
+use Novaday\Moadian\InvoiceItem;
+use Novaday\Moadian\Payment;
 
 public function sendInvoice($invoiceId = '') {
     $invoiceId = intval($invoiceId);

@@ -1,11 +1,11 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Http;
+namespace Novaday\Moadian\Http;
 
-use Jooyeshgar\Moadian\Invoice;
-use Jooyeshgar\Moadian\Services\EncryptionService;
-use Jooyeshgar\Moadian\Services\SignatureService;
-use Jooyeshgar\Moadian\Traits\HasToken;
+use Novaday\Moadian\Invoice;
+use Novaday\Moadian\Services\EncryptionService;
+use Novaday\Moadian\Services\SignatureService;
+use Novaday\Moadian\Traits\HasToken;
 use Ramsey\Uuid\Nonstandard\Uuid;
 
 class SendInvoice extends Request
