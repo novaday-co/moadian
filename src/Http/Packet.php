@@ -2,7 +2,7 @@
 
 namespace Novaday\Moadian\Http;
 
-use Ramsey\Uuid\Nonstandard\Uuid;
+use Ramsey\Uuid\Uuid;
 
 class Packet
 {
