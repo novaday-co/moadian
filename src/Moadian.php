@@ -17,10 +17,10 @@ use Novaday\Moadian\Services\SignatureService;
 
 class Moadian
 {
-    private Client $client;
-    private SignatureService $signer;
-    private EncryptionService $encryptor;
-    private Response $response;
+    private $client;
+    private $signer;
+    private $encryptor;
+    private $response;
 
     public function __construct($privateKey, $certificate, $baseUri ='https://tp.tax.gov.ir/requestsmanager/api/v2/')
     {

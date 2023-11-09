@@ -7,47 +7,47 @@ class Payment
     /**
      * Iin number
      */
-    public ?string $iinn;
+    public $iinn;
 
     /**
      * acceptor number
      */
-    public ?string $acn;
+    public $acn;
 
     /**
      * terminal number
      */
-    public ?string $trmn;
+    public $trmn;
 
     /**
      * payment method
      */
-    public ?int $pmt;
+    public $pmt;
 
     /**
      * tracking number
      */
-    public ?string $trn;
+    public $trn;
 
     /**
      * payer card number
      */
-    public ?string $pcn;
+    public $pcn;
 
     /**
      * payer id
      */
-    public ?string $pid;
+    public $pid;
 
     /**
      * payment DateTime
      */
-    public ?int $pdt;
+    public $pdt;
 
     /**
      * payment value
      */
-    public ?float $pv;
+    public $pv;
 
     public function toArray(): array
     {
