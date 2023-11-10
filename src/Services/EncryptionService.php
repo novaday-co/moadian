@@ -2,8 +2,6 @@
 
 namespace Novaday\Moadian\Services;
 
-use phpseclib3\Crypt\RSA;
-
 class EncryptionService
 {
     private const CIPHER = 'aes-256-gcm';
@@ -25,14 +23,23 @@ class EncryptionService
 
     public function encryptAesKey(string $aesKey): string
     {
-        $rsa = RSA::loadPublicKey($this->publicKey);
+        if (class_exists(\phpseclib3\Crypt\RSA::class)) {
+            $rsa = \phpseclib3\Crypt\RSA::loadPublicKey($this->publicKey);
+        } elseif (class_exists(\phpseclib\Crypt\RSA::class)) {
+            $rsa = new \phpseclib\Crypt\RSA();
+            $rsa->setPublicKey($this->publicKey);
+            $rsa->setHash('sha256');
+            $rsa->setMGFHash('sha256');
+        } else {
+            throw new \RuntimeException("Failed to initialize 'phpseclib' RSA implementation");
+        }
 
         return base64_encode($rsa->encrypt($aesKey));
     }
 
     /**
      * Encrypts the given text using the provided key and initialization vector (IV).
-     * 
+     *
      * @param string $text The plaintext to be encrypted.
      * @param string $key The encryption key used for encryption in binary format.
      * @param string $iv The initialization vector (IV) used for encryption in binary format.
@@ -50,11 +57,6 @@ class EncryptionService
         return base64_encode($cipherText . $tag);
     }
 
-    public function decrypt(string $encryptedText, string $key, string $iv, int $tagLen)
-    {
-
-    }
-
     public function xorStrings(string $source, string $key): string
     {
         $sourceLength = strlen($source);
@@ -64,6 +66,11 @@ class EncryptionService
             $result .= $source[$i] ^ $key[$i % $keyLength];
         }
         return $result;
+    }
+
+    public function decrypt(string $encryptedText, string $key, string $iv, int $tagLen)
+    {
+
     }
 
 }

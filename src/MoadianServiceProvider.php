@@ -14,7 +14,7 @@ class MoadianServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'../config/moadian.php', 'moadian'
+            __DIR__.'/../config/moadian.php', 'moadian'
         );
 
         $this->app->bind('Novaday\Moadian\Moadian', function ($app) {
@@ -39,7 +39,7 @@ class MoadianServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'../config/moadian.php' => config_path('moadian.php'),
+            __DIR__.'/../config/moadian.php' => config_path('moadian.php'),
         ], 'config');
     }
 }
