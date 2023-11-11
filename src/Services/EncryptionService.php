@@ -27,6 +27,9 @@ class EncryptionService
 
         if ($rsa !== null) {
             $encrypted = $rsa->encrypt($aesKey);
+            if ($encrypted === false) {
+                $encrypted = $this->pureOpensslEncryption($aesKey);
+            }
         } else {
             $encrypted = $this->pureOpensslEncryption($aesKey);
         }
