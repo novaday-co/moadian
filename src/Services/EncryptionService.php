@@ -39,13 +39,13 @@ class EncryptionService
         $rsaClass = class_exists(\phpseclib3\Crypt\RSA::class) ? \phpseclib3\Crypt\RSA::class : \phpseclib\Crypt\RSA::class;
 
         if (class_exists($rsaClass)) {
-            $rsa = new $rsaClass();
-            if (property_exists($rsa, 'publicKey')) {
+            if (method_exists($rsaClass, 'loadPublicKey')) {
+                $rsa = \phpseclib3\Crypt\RSA::loadPublicKey($this->publicKey);
+            } else {
+                $rsa = new $rsaClass();
                 $rsa->setPublicKey($this->publicKey);
                 $rsa->setHash('sha256');
                 $rsa->setMGFHash('sha256');
-            } else {
-                $rsa = \phpseclib3\Crypt\RSA::loadPublicKey($this->publicKey);
             }
             return $rsa;
         }
