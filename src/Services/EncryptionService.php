@@ -40,7 +40,7 @@ class EncryptionService
 
         if (class_exists($rsaClass)) {
             if (method_exists($rsaClass, 'loadPublicKey')) {
-                $rsa = \phpseclib3\Crypt\RSA::loadPublicKey($this->publicKey);
+                $rsa = $rsaClass::loadPublicKey($this->publicKey);
             } else {
                 $rsa = new $rsaClass();
                 $rsa->setPublicKey($this->publicKey);
