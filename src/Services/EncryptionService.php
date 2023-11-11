@@ -23,18 +23,43 @@ class EncryptionService
 
     public function encryptAesKey(string $aesKey): string
     {
-        if (class_exists(\phpseclib3\Crypt\RSA::class)) {
-            $rsa = \phpseclib3\Crypt\RSA::loadPublicKey($this->publicKey);
-        } elseif (class_exists(\phpseclib\Crypt\RSA::class)) {
-            $rsa = new \phpseclib\Crypt\RSA();
-            $rsa->setPublicKey($this->publicKey);
-            $rsa->setHash('sha256');
-            $rsa->setMGFHash('sha256');
+        $rsa = $this->getRsaInstance();
+
+        if ($rsa !== null) {
+            $encrypted = $rsa->encrypt($aesKey);
         } else {
-            throw new \RuntimeException("Failed to initialize 'phpseclib' RSA implementation");
+            $encrypted = $this->pureOpensslEncryption($aesKey);
         }
 
-        return base64_encode($rsa->encrypt($aesKey));
+        return base64_encode($encrypted);
+    }
+
+    private function getRsaInstance()
+    {
+        $rsaClass = class_exists(\phpseclib3\Crypt\RSA::class) ? \phpseclib3\Crypt\RSA::class : \phpseclib\Crypt\RSA::class;
+
+        if (class_exists($rsaClass)) {
+            $rsa = new $rsaClass();
+            if (property_exists($rsa, 'publicKey')) {
+                $rsa->setPublicKey($this->publicKey);
+                $rsa->setHash('sha256');
+                $rsa->setMGFHash('sha256');
+            } else {
+                $rsa = \phpseclib3\Crypt\RSA::loadPublicKey($this->publicKey);
+            }
+            return $rsa;
+        }
+
+        return null;
+    }
+
+    private function pureOpensslEncryption(string $aesKey): string
+    {
+        if (!openssl_public_encrypt($aesKey, $encrypted, $this->publicKey, OPENSSL_PKCS1_OAEP_PADDING)) {
+            throw new \RuntimeException('Unable to encrypt AES Key');
+        }
+
+        return $encrypted;
     }
 
     /**
