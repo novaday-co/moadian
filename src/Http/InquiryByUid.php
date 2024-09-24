@@ -1,16 +1,17 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Http;
+namespace Novaday\Moadian\Http;
 
-use Jooyeshgar\Moadian\Services\EncryptionService;
-use Jooyeshgar\Moadian\Services\SignatureService;
-use Jooyeshgar\Moadian\Traits\HasToken;
+use Novaday\Moadian\Services\EncryptionService;
+use Novaday\Moadian\Services\SignatureService;
+use Novaday\Moadian\Traits\HasToken;
 
 class InquiryByUid extends Request
 {
     use HasToken;
 
-    public function __construct(string $uid, string $start = '', string $end = '') {
+    public function __construct(string $uid, string $start = '', string $end = '')
+    {
         parent::__construct();
 
         $this->path = 'inquiry-by-uid';

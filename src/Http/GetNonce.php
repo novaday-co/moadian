@@ -1,9 +1,9 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Http;
+namespace Novaday\Moadian\Http;
 
-use Jooyeshgar\Moadian\Services\SignatureService;
-use Jooyeshgar\Moadian\Services\EncryptionService;
+use Novaday\Moadian\Services\SignatureService;
+use Novaday\Moadian\Services\EncryptionService;
 
 class GetNonce extends Request
 {
@@ -18,5 +18,7 @@ class GetNonce extends Request
         $this->params['timeToLive'] = $validity;
     }
 
-    public function prepare(SignatureService $signer, EncryptionService $encryptor) {}
+    public function prepare(SignatureService $signer, EncryptionService $encryptor)
+    {
+    }
 }

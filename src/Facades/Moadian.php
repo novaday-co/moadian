@@ -1,25 +1,24 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Facades;
-
-/**
- * @method static string getNonce(int $validity = 30) 
- * @method static Jooyeshgar\Moadian\Http\Response getServerInfo()
- * @method static Jooyeshgar\Moadian\Http\Response getFiscalInfo()
- * @method static Jooyeshgar\Moadian\Http\Response inquiryByUid(string $uid, string $start = '', string $end = '')
- * @method static Jooyeshgar\Moadian\Http\Response inquiryByReferenceNumbers(string $referenceId, string $start = '', string $end = '')
- * @method static Jooyeshgar\Moadian\Http\Response getEconomicCodeInformation(string $taxID)
- * @method static Jooyeshgar\Moadian\Http\Response sendInvoice(Invoice $invoice)
- * 
- * @see \Jooyeshgar\Moadian\Moadian
- */
+namespace Novaday\Moadian\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
+/**
+ * @method static string getNonce(int $validity = 30)
+ * @method static Novaday\Moadian\Http\Response getServerInfo()
+ * @method static Novaday\Moadian\Http\Response getFiscalInfo()
+ * @method static Novaday\Moadian\Http\Response inquiryByUid(string $uid, string $start = '', string $end = '')
+ * @method static Novaday\Moadian\Http\Response inquiryByReferenceNumbers(string $referenceId, string $start = '', string $end = '')
+ * @method static Novaday\Moadian\Http\Response getEconomicCodeInformation(string $taxID)
+ * @method static Novaday\Moadian\Http\Response sendInvoice(Invoice $invoice)
+ *
+ * @see \Novaday\Moadian\Moadian
+ */
 class Moadian extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'Jooyeshgar\Moadian\Moadian';
+        return 'Novaday\Moadian\Moadian';
     }
 }

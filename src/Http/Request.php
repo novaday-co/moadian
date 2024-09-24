@@ -1,9 +1,9 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Http;
+namespace Novaday\Moadian\Http;
 
-use Jooyeshgar\Moadian\Services\EncryptionService;
-use Jooyeshgar\Moadian\Services\SignatureService;
+use Novaday\Moadian\Services\EncryptionService;
+use Novaday\Moadian\Services\SignatureService;
 
 abstract class Request
 {
@@ -36,5 +36,5 @@ abstract class Request
         return $this->params;
     }
 
-    abstract function prepare(SignatureService $signer, EncryptionService $encryptor);
+    abstract public function prepare(SignatureService $signer, EncryptionService $encryptor);
 }

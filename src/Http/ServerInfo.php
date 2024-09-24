@@ -1,10 +1,10 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Http;
+namespace Novaday\Moadian\Http;
 
-use Jooyeshgar\Moadian\Services\EncryptionService;
-use Jooyeshgar\Moadian\Services\SignatureService;
-use Jooyeshgar\Moadian\Traits\HasToken;
+use Novaday\Moadian\Services\EncryptionService;
+use Novaday\Moadian\Services\SignatureService;
+use Novaday\Moadian\Traits\HasToken;
 
 class ServerInfo extends Request
 {

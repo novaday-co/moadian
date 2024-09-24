@@ -1,6 +1,6 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Services;
+namespace Novaday\Moadian\Services;
 
 use Firebase\JWT\JWT;
 use phpseclib3\Crypt\RSA;
@@ -26,6 +26,9 @@ class EncryptionService
 
     public function encryptAesKey(string $aesKey): string
     {
+        /**
+         * @var RSA\PublicKey $rsa
+         */
         $rsa = RSA::loadPublicKey($this->publicKey);
 
         return $rsa->encrypt($aesKey);
@@ -33,7 +36,7 @@ class EncryptionService
 
     /**
      * Encrypts the given invoice.
-     * 
+     *
      * @param string $jws Signed invoice.
      * @param string $key The encryption key used for encryption in binary format.
      * @param string $iv The initialization vector (IV) used for encryption in binary format.

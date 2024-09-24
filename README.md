@@ -2,38 +2,36 @@
 
 This Laravel package provides a convenient way to interact with the API of the "Moadian system" (سامانه مودیان) offered by intamedia.ir. With this package, you can easily make requests to the Moadian API and handle the responses in your Laravel application.
 
-**Important Notice:** This package provides access to the Moadian system API and is not intended for direct user interaction. It's designed for developers integrating Moadian functionality into their applications.
-
-For a user-friendly accounting software experience, we recommend checking out our FreeAmin project (under **development**):
-
- * Link: https://github.com/Jooyeshgar/FreeAmir
+> [!IMPORTANT]
+> This package provides access to the Moadian system API and is not intended for direct user interaction. It's designed for developers integrating Moadian functionality into their applications.
 
 ## Requirements
 
-This package requires Laravel 8 or higher. It has been tested with Laravel 8 and PHP 7.4, as well as with Laravel 10 and PHP 8.1.
+This package requires Laravel 8 and PHP 7.4 or higher.
 
 ## Installation
 
 To install this package, simply run the following command:
 ```bash
-composer require jooyeshgar/moadian
+composer require novaday-co/moadian
 ```
 ## Usage
 
-To use this package, you will need to obtain a username, private key and certificate from intamedia.ir. Once you have your credentials, you can configure the package in your Laravel application's `.env` file:
+To use this package, you will need to obtain a username, private key and certificate from [intamedia.ir](https://intamedia.ir). Once you have your credentials, you can configure the package in your Laravel application's `.env` file:
 
 ```
 MOADIAN_USERNAME=your-username-here
 MOADIAN_PRIVATE_KEY_PATH=/path/to/private.pem
 MOADIAN_CERTIFICATE_PATH=/path/to/certificate.crt
 ```
-The default location to store the private key is: storage_path('app/keys/private.pem');\
-The default location to store the certificate is: storage_path('app/keys/certificate.crt');
+> [!NOTE]
+> The default location to store the private key is: storage_path('app/keys/private.pem');\
+> The default location to store the certificate is: storage_path('app/keys/certificate.crt');
 
 You can then use the `Moadian` facade to interact with the Moadian API. Here are some examples:
 
 ```php
-use Jooyeshgar\Moadian\Facades\Moadian;
+use Novaday\Moadian\Facades\Moadian;
 
 // Get server info
 $info = Moadian::getServerInfo();
@@ -53,10 +51,10 @@ $info = Moadian::inquiryByReferenceNumbers('a45aa663-6888-4025-a89d-86fc789672a0
 To send an invoice to Moadian, you can use the sendInvoice() method provided by the plugin. Here's an example of how to use it:
 
 ```php
-use Jooyeshgar\Moadian\Invoice as MoadianInvoice;
-use Jooyeshgar\Moadian\InvoiceHeader;
-use Jooyeshgar\Moadian\InvoiceItem;
-use Jooyeshgar\Moadian\Payment;
+use Novaday\Moadian\Invoice as MoadianInvoice;
+use Novaday\Moadian\InvoiceHeader;
+use Novaday\Moadian\InvoiceItem;
+use Novaday\Moadian\Payment;
 
 public function sendInvoice($invoiceId = '') {
     $invoiceId = intval($invoiceId);
@@ -146,8 +144,8 @@ There are other types of invoices (Cancellation, corrective, Sales return) that 
 
 ## Contributing
 
-If you find a bug or would like to contribute to this package, please feel free to [submit an issue](https://github.com/Jooyeshgar/moadian/issues) or [create a pull request](https://github.com/Jooyeshgar/moadian/pulls).
+If you find a bug or would like to contribute to this package, please feel free to [submit an issue](https://github.com/novaday-co/moadian/issues) or [create a pull request](https://github.com/novaday-co/moadian/pulls).
 
 ## License
 
-This package is open source software licensed under the [GPL-3.0 license](https://opensource.org/licenses/GPL-3.0).
+This package is open source software licensed under the [GPL-3.0 license](./LICENSE).
