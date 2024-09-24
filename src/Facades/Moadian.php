@@ -2,6 +2,8 @@
 
 namespace Novaday\Moadian\Facades;
 
+use Illuminate\Support\Facades\Facade;
+
 /**
  * @method static string getNonce(int $validity = 30)
  * @method static Novaday\Moadian\Http\Response getServerInfo()
@@ -13,9 +15,6 @@ namespace Novaday\Moadian\Facades;
  *
  * @see \Novaday\Moadian\Moadian
  */
-
-use Illuminate\Support\Facades\Facade;
-
 class Moadian extends Facade
 {
     protected static function getFacadeAccessor()

@@ -212,12 +212,12 @@ class InvoiceHeader
     public function setTaxID(DateTime $date, int $internalInvoiceId)
     {
         $daysPastEpoch = $this->getDaysPastEpoch($date);
-        $daysPastEpochPadded = str_pad($daysPastEpoch, 6, '0', STR_PAD_LEFT);
+        $daysPastEpochPadded = str_pad((string)$daysPastEpoch, 6, '0', STR_PAD_LEFT);
         $hexDaysPastEpochPadded = str_pad(dechex($daysPastEpoch), 5, '0', STR_PAD_LEFT);
 
         $numericClientId = $this->clientIdToNumber($this->clientId);
 
-        $internalInvoiceIdPadded = str_pad($internalInvoiceId, 12, '0', STR_PAD_LEFT);
+        $internalInvoiceIdPadded = str_pad((string)$internalInvoiceId, 12, '0', STR_PAD_LEFT);
         $hexInternalInvoiceIdPadded = str_pad(dechex($internalInvoiceId), 10, '0', STR_PAD_LEFT);
 
         $decimalInvoiceId = $numericClientId . $daysPastEpochPadded . $internalInvoiceIdPadded;

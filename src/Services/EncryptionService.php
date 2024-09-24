@@ -26,6 +26,9 @@ class EncryptionService
 
     public function encryptAesKey(string $aesKey): string
     {
+        /**
+         * @var RSA\PublicKey $rsa
+         */
         $rsa = RSA::loadPublicKey($this->publicKey);
 
         return $rsa->encrypt($aesKey);
