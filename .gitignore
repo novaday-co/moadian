@@ -1,4 +1,11 @@
-vendor/*
+/.phpunit.cache
+/vendor
+composer.phar
 composer.lock
-.phpunit.*
-tests/Feature/private.pem
+.DS_Store
+Thumbs.db
+/phpunit.xml
+/.idea
+/.fleet
+/.vscode
+.phpunit.result.cache

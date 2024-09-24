@@ -1,9 +1,9 @@
 <?php
 
-namespace Jooyeshgar\Moadian;
+namespace Novaday\Moadian;
 
 use DateTime;
-use Jooyeshgar\Moadian\Services\VerhoeffService;
+use Novaday\Moadian\Services\VerhoeffService;
 
 class InvoiceHeader
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Services;
+namespace Novaday\Moadian\Services;
 
 class VerhoeffService
 {

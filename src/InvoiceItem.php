@@ -1,6 +1,6 @@
 <?php
 
-namespace Jooyeshgar\Moadian;
+namespace Novaday\Moadian;
 
 class InvoiceItem
 {

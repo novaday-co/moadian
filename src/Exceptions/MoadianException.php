@@ -1,6 +1,6 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Exceptions;
+namespace Novaday\Moadian\Exceptions;
 
 use Exception;
 
