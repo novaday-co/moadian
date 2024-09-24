@@ -1,8 +1,8 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Services;
+namespace Novaday\Moadian\Services;
 
-use Jooyeshgar\Moadian\Exceptions\MoadianException;
+use Novaday\Moadian\Exceptions\MoadianException;
 
 class SignatureService
 {

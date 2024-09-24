@@ -1,8 +1,6 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Http;
-
-use Ramsey\Uuid\Uuid;
+namespace Novaday\Moadian\Http;
 
 class GetTokenPacket extends Packet
 {

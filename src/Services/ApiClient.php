@@ -1,11 +1,20 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Services;
+namespace Novaday\Moadian\Services;
 
 use GuzzleHttp\Client;
-use Jooyeshgar\Moadian\Exceptions\MoadianException;
-use Jooyeshgar\Moadian\Http\{EconomicCodeInformation, Packet, ServerInfoPacket, GetTokenPacket, FiscalInfoPacket, InquiryByReferenceNumber, InquiryByUid, invoicePacket, Request, Response};
-use Jooyeshgar\Moadian\Invoice;
+use Novaday\Moadian\Exceptions\MoadianException;
+use Novaday\Moadian\Http\{EconomicCodeInformation,
+    FiscalInfoPacket,
+    GetTokenPacket,
+    InquiryByReferenceNumber,
+    InquiryByUid,
+    invoicePacket,
+    Packet,
+    Request,
+    Response,
+    ServerInfoPacket};
+use Novaday\Moadian\Invoice;
 
 class ApiClient
 {
@@ -65,7 +74,7 @@ class ApiClient
         if($response->isSuccessful()){
             $result = $response->getBody();
             $this->token = $result['token'];
-            return $this->token; 
+            return $this->token;
         }
 
         throw new MoadianException('Unable to retrieve Token');
@@ -106,7 +115,7 @@ class ApiClient
 
         $aesHex = bin2hex(random_bytes(32));
         $iv = bin2hex(random_bytes(16));
-        
+
         $packet->iv = $iv;
         $packet->symmetricKey = $this->encryptor->encryptAesKey($aesHex);
         $packet->encryptionKeyId = $this->encryptor->KeyId;

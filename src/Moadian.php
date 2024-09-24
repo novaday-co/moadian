@@ -1,10 +1,9 @@
 <?php
-namespace Jooyeshgar\Moadian;
 
-use GuzzleHttp\Client;
-use Jooyeshgar\Moadian\Exceptions\MoadianException;
-use Jooyeshgar\Moadian\Services\ApiClient;
-use Ramsey\Uuid\Uuid;
+namespace Novaday\Moadian;
+
+use Novaday\Moadian\Exceptions\MoadianException;
+use Novaday\Moadian\Services\ApiClient;
 
 class Moadian
 {
@@ -54,8 +53,9 @@ class Moadian
 
     public function getEconomicCodeInformation(string $taxID)
     {
-        if (strlen($taxID) < 9 || strlen($taxID) >= 12)
+        if (strlen($taxID) < 9 || strlen($taxID) >= 12) {
             throw new MoadianException('$taxID must be between 10 and 11 digits');
+        }
 
         return $this->client->getEconomicCodeInformation($taxID);
     }

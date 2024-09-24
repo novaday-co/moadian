@@ -1,6 +1,6 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Http;
+namespace Novaday\Moadian\Http;
 
 class EconomicCodeInformation extends Packet
 {
@@ -10,7 +10,7 @@ class EconomicCodeInformation extends Packet
 
         $this->path       = 'req/api/self-tsp/sync/GET_ECONOMIC_CODE_INFORMATION';
         $this->packetType = 'GET_ECONOMIC_CODE_INFORMATION';
-        
+
         $this->data = [
             'economicCode' => $taxId,
         ];

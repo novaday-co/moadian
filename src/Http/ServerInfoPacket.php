@@ -1,6 +1,6 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Http;
+namespace Novaday\Moadian\Http;
 
 class ServerInfoPacket extends Packet
 {

@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-namespace Jooyeshgar\Moadian\Http;
+namespace Novaday\Moadian\Http;
 
 use Ramsey\Uuid\Nonstandard\Uuid;
 
@@ -12,14 +12,14 @@ class Request
     public string $timestamp = '';
 
     // Body fields
-    private ?Packet  $packet = null; 
+    private ?Packet  $packet = null;
     private array    $packets = [];
     public  string   $signature;
     public  ?string  $signatureKeyId = null;
 
     public bool $needToken = false;
 
-    public function __construct() 
+    public function __construct()
     {
         $this->timestamp = (string)intval(microtime(true) * 1000);
         $this->requestTraceId = Uuid::uuid4()->toString();
@@ -67,7 +67,7 @@ class Request
     }
 
     public function getBody()
-    {  
+    {
         return json_encode($this->toArray());
     }
 

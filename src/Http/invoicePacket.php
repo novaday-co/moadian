@@ -1,8 +1,8 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Http;
+namespace Novaday\Moadian\Http;
 
-use Jooyeshgar\Moadian\Invoice;
+use Novaday\Moadian\Invoice;
 
 class invoicePacket extends Packet
 {

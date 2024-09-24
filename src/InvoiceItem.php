@@ -1,10 +1,10 @@
 <?php
 
-namespace Jooyeshgar\Moadian;
+namespace Novaday\Moadian;
 
 class InvoiceItem
 {
-/**
+    /**
      * service stuff ID
      */
     public string $sstid;

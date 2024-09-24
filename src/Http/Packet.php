@@ -1,6 +1,6 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Http;
+namespace Novaday\Moadian\Http;
 
 use Ramsey\Uuid\Nonstandard\Uuid;
 
@@ -20,9 +20,9 @@ class Packet
     public string $path        = 'req/api/self-tsp/sync/GET_SERVER_INFORMATION';
     public bool   $needToken   = false;
     public bool   $needEncrypt = false;
-   
 
-    public function __construct() 
+
+    public function __construct()
     {
         $this->uid = Uuid::uuid4()->toString();
     }

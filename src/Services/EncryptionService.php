@@ -1,8 +1,7 @@
 <?php
 
-namespace Jooyeshgar\Moadian\Services;
+namespace Novaday\Moadian\Services;
 
-use Jooyeshgar\Moadian\Exceptions\MoadianException;
 use phpseclib3\Crypt\RSA;
 
 class EncryptionService
@@ -26,6 +25,9 @@ class EncryptionService
 
     public function encryptAesKey(string $aesKey): string
     {
+        /**
+         * @var RSA\PublicKey $rsa
+         */
         $rsa = RSA::loadPublicKey($this->publicKey);
 
         return base64_encode($rsa->encrypt($aesKey));
@@ -33,7 +35,7 @@ class EncryptionService
 
     /**
      * Encrypts the given text using the provided key and initialization vector (IV).
-     * 
+     *
      * @param string $text The plaintext to be encrypted.
      * @param string $key The encryption key used for encryption in binary format.
      * @param string $iv The initialization vector (IV) used for encryption in binary format.
