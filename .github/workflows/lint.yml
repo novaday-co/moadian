@@ -18,6 +18,9 @@ jobs:
       matrix:
         php: [8.2]
 
+    env:
+      extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite
+      key: php_${{ matrix.php }}_cache_v1
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
