@@ -7,6 +7,12 @@ use Novaday\Moadian\Services\VerhoeffService;
 
 class InvoiceHeader
 {
+    protected const CHARACTER_TO_NUMBER_CODING = [
+        'A' => 65, 'B' => 66, 'C' => 67, 'D' => 68, 'E' => 69, 'F' => 70, 'G' => 71, 'H' => 72, 'I' => 73,
+        'J' => 74, 'K' => 75, 'L' => 76, 'M' => 77, 'N' => 78, 'O' => 79, 'P' => 80, 'Q' => 81, 'R' => 82,
+        'S' => 83, 'T' => 84, 'U' => 85, 'V' => 86, 'W' => 87, 'X' => 88, 'Y' => 89, 'Z' => 90,
+    ];
+
     /**
      * MOADIAN_USERNAME
      */
@@ -234,20 +240,12 @@ class InvoiceHeader
 
     private function clientIdToNumber(string $clientId): string
     {
-        if (!defined('CHARACTER_TO_NUMBER_CODING')) {
-            define('CHARACTER_TO_NUMBER_CODING', [
-                'A' => 65, 'B' => 66, 'C' => 67, 'D' => 68, 'E' => 69, 'F' => 70, 'G' => 71, 'H' => 72, 'I' => 73,
-                'J' => 74, 'K' => 75, 'L' => 76, 'M' => 77, 'N' => 78, 'O' => 79, 'P' => 80, 'Q' => 81, 'R' => 82,
-                'S' => 83, 'T' => 84, 'U' => 85, 'V' => 86, 'W' => 87, 'X' => 88, 'Y' => 89, 'Z' => 90,
-            ]);
-        }
-
         $result = '';
         foreach (str_split($clientId) as $char) {
             if (is_numeric($char)) {
                 $result .= $char;
             } else {
-                $result .= CHARACTER_TO_NUMBER_CODING[$char];
+                $result .= self::CHARACTER_TO_NUMBER_CODING[$char];
             }
         }
 
