@@ -10,7 +10,8 @@ class InquiryByUid extends Request
 {
     use HasToken;
 
-    public function __construct(string $uid, string $start = '', string $end = '') {
+    public function __construct(string $uid, string $start = '', string $end = '')
+    {
         parent::__construct();
 
         $this->path = 'inquiry-by-uid';

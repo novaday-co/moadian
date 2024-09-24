@@ -14,7 +14,8 @@ class SendInvoice extends Request
 
     private Invoice $invoice;
 
-    public function __construct(Invoice $invoice) {
+    public function __construct(Invoice $invoice)
+    {
 
         parent::__construct();
 
@@ -28,7 +29,7 @@ class SendInvoice extends Request
     {
         $this->addToken($signer);
         $jws = $signer->sign($this->invoice->toArray());
-        
+
         $aesHex = bin2hex(random_bytes(32));
         $iv     = bin2hex(random_bytes(12));
 

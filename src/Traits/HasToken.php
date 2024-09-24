@@ -9,9 +9,9 @@ trait HasToken
 {
     /**
      * Create authorization token
-     * 
+     *
      * @param SignatureService $signer
-     * 
+     *
      */
     public function addToken(SignatureService $signer)
     {

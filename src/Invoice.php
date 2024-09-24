@@ -9,7 +9,7 @@ class Invoice
     private array $payments = [];
 
     public $retry = false;
-    
+
     public function __construct(InvoiceHeader $header)
     {
         $this->header = $header;
@@ -30,11 +30,11 @@ class Invoice
         return [
             'header'  => $this->header->toArray(),
 
-            'body'    => array_map(function ($item){
+            'body'    => array_map(function ($item) {
                 return $item->toArray();
             }, $this->body),
 
-            'payments' => array_map(function ($item){
+            'payments' => array_map(function ($item) {
                 return $item->toArray();
             }, $this->payments),
         ];

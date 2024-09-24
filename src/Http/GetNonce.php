@@ -18,5 +18,7 @@ class GetNonce extends Request
         $this->params['timeToLive'] = $validity;
     }
 
-    public function prepare(SignatureService $signer, EncryptionService $encryptor) {}
+    public function prepare(SignatureService $signer, EncryptionService $encryptor)
+    {
+    }
 }

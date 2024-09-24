@@ -1,4 +1,5 @@
 <?php
+
 namespace Novaday\Moadian;
 
 use GuzzleHttp\Client;
@@ -22,7 +23,7 @@ class Moadian
     private EncryptionService $encryptor;
     private Response $response;
 
-    public function __construct($privateKey, $certificate, $baseUri ='https://tp.tax.gov.ir/requestsmanager/api/v2/')
+    public function __construct($privateKey, $certificate, $baseUri = 'https://tp.tax.gov.ir/requestsmanager/api/v2/')
     {
         $this->client = new Client([
             'base_uri' => $baseUri,
@@ -36,7 +37,7 @@ class Moadian
 
     /**
      * Sends a request to the API server.
-     * 
+     *
      * @param Request $request The request to send.
      * @return mixed The response from API server.
      */
@@ -60,9 +61,9 @@ class Moadian
 
         $response = $this->sendRequest($request);
 
-        if($response->isSuccessful()){
+        if ($response->isSuccessful()) {
             $result = $response->getBody();
-            return $result['nonce']; 
+            return $result['nonce'];
         }
 
         throw new MoadianException('Unable to retrieve Token');
@@ -82,7 +83,7 @@ class Moadian
 
     /**
      * Inquiry invoice with reference uuid.
-     * 
+     *
      * @param string $uid
      * @param string $start Optional. start time e.g 2023-05-14T00:00:00.000000000+03:30
      * @param string $end Optional. end time e.g 2023-05-14T23:59:59.123456789+03:30
@@ -95,7 +96,7 @@ class Moadian
 
     /**
      * Inquiry invoice with reference ID.
-     * 
+     *
      * @param string $referenceId
      * @param string $start Optional. start time e.g 2023-05-14T00:00:00.000000000+03:30
      * @param string $end Optional. end time e.g 2023-05-14T23:59:59.123456789+03:30
@@ -108,8 +109,9 @@ class Moadian
 
     public function getEconomicCodeInformation(string $taxID)
     {
-        if (strlen($taxID) < 9 || strlen($taxID) >= 12)
+        if (strlen($taxID) < 9 || strlen($taxID) >= 12) {
             throw new MoadianException('$taxID must be between 10 and 11 digits');
+        }
 
         $request = new EconomicCodeInformation($taxID);
         return $this->sendRequest($request);

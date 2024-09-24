@@ -36,5 +36,5 @@ abstract class Request
         return $this->params;
     }
 
-    abstract function prepare(SignatureService $signer, EncryptionService $encryptor);
+    abstract public function prepare(SignatureService $signer, EncryptionService $encryptor);
 }
