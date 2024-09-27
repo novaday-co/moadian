@@ -50,6 +50,8 @@ class Request
     public function setToken(string $token)
     {
         $this->authorization = $token;
+
+        return $this;
     }
 
     public function getHeaders()
