@@ -36,20 +36,22 @@ class ApiClient
         $this->encryptor = new EncryptionService();
         $this->response = new Response();
     }
+
     /**
      * Sends a packet to the API server.
      *
-     * @param Packet $packet The packet to send.
-     * @return mixed The response from the API server.
+     * @return Response The response from the API server.
      */
     public function sendRequest(Request $request): Response
     {
         if ($request->needToken) {
             $this->addToken($request);
         }
+
         if ($request->getPacket()->needEncrypt) {
             $this->encryptPacket($request->getPacket());
         }
+
         $request = $this->signRequest($request);
 
         $httpResp = $this->httpClient->post($request->getPacket()->path, [
@@ -88,8 +90,7 @@ class ApiClient
     /**
      * Signs a packet with a digital signature.
      *
-     * @param Packet $packet The packet to sign.
-     * @return void
+     * @return Request
      */
     private function signRequest(Request $request)
     {
@@ -111,7 +112,8 @@ class ApiClient
      * Encrypts a packet with a symmetric encryption algorithm.
      *
      * @param Packet $packet The packet to encrypt.
-     * @return void
+     *
+     * @return Packet
      */
     private function encryptPacket(Packet $packet)
     {

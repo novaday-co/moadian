@@ -45,7 +45,7 @@ class SignatureService
             if ($value === '' || $value === null) {
                 $value = '#';
             } else {
-                strtr($value, [ '#' => '##']);
+                $value = strtr($value, [ '#' => '##']);
             }
 
             $normalizedData[] = $value;
