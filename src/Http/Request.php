@@ -14,8 +14,8 @@ class Request
     // Body fields
     private ?Packet  $packet = null;
     private array    $packets = [];
-    public  string   $signature;
-    public  ?string  $signatureKeyId = null;
+    public string   $signature;
+    public ?string  $signatureKeyId = null;
 
     public bool $needToken = false;
 

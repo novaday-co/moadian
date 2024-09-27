@@ -6,7 +6,8 @@ use Novaday\Moadian\Invoice;
 
 class invoicePacket extends Packet
 {
-    public function __construct(string $username, Invoice $invoice) {
+    public function __construct(string $username, Invoice $invoice)
+    {
 
         parent::__construct();
 

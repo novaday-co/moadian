@@ -21,7 +21,7 @@ class Response
         }
 
         return $this;
-    }   
+    }
 
     public function getStatusCode()
     {
@@ -64,12 +64,12 @@ class Response
         }
 
         //sync response
-        if(isset($data['result']['data'])){
+        if (isset($data['result']['data'])) {
             return $data['result']['data'];
         }
-        
+
         //async response
-        if(isset($data['result'][0]['referenceNumber'])) {
+        if (isset($data['result'][0]['referenceNumber'])) {
             return $data['result'];
         }
 

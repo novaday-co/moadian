@@ -44,8 +44,12 @@ class ApiClient
      */
     public function sendRequest(Request $request): Response
     {
-        if($request->needToken) $this->addToken($request);
-        if($request->getPacket()->needEncrypt) $this->encryptPacket($request->getPacket());
+        if ($request->needToken) {
+            $this->addToken($request);
+        }
+        if ($request->getPacket()->needEncrypt) {
+            $this->encryptPacket($request->getPacket());
+        }
         $request = $this->signRequest($request);
 
         $httpResp = $this->httpClient->post($request->getPacket()->path, [
@@ -58,7 +62,7 @@ class ApiClient
 
     private function addToken(Request $request)
     {
-        if(is_null($this->token)){
+        if (is_null($this->token)) {
             $this->getToken();
         }
         return $request->setToken($this->token);
@@ -71,7 +75,7 @@ class ApiClient
 
         $response = $this->sendRequest($request);
 
-        if($response->isSuccessful()){
+        if ($response->isSuccessful()) {
             $result = $response->getBody();
             $this->token = $result['token'];
             return $this->token;
@@ -133,10 +137,10 @@ class ApiClient
 
     public function requirePublicKey()
     {
-        if(empty($this->encryptor->publicKey)){
+        if (empty($this->encryptor->publicKey)) {
             $serverInfo = $this->getServerInfo();
 
-            if($serverInfo->isSuccessful()){
+            if ($serverInfo->isSuccessful()) {
                 $info = $serverInfo->getBody();
                 $this->encryptor->KeyId = $info['publicKeys'][0]['id'];
                 $pem = chunk_split($info['publicKeys'][0]['key'], 64, "\n");

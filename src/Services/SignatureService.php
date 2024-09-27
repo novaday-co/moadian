@@ -20,8 +20,7 @@ class SignatureService
 
         if (openssl_sign($text, $signature, $this->privateKey, OPENSSL_ALGO_SHA256)) {
             return base64_encode($signature);
-        }
-        else {
+        } else {
             throw new MoadianException('Failed to sign the text with message ' . openssl_error_string());
         }
     }
@@ -45,8 +44,7 @@ class SignatureService
 
             if ($value === '' || $value === null) {
                 $value = '#';
-            }
-            else {
+            } else {
                 strtr($value, [ '#' => '##']);
             }
 
@@ -56,13 +54,13 @@ class SignatureService
         return implode("#", $normalizedData);
     }
 
-    private static function flattener(array $array, string $prefix = ''): array {
+    private static function flattener(array $array, string $prefix = ''): array
+    {
         $flatted = [];
         foreach ($array as $key => $value) {
             if (is_array($value)) {
                 $flatted = array_merge($flatted, self::flattener($value, "$prefix.$key"));
-            }
-            else {
+            } else {
                 $flatted["$prefix.$key"] = $value;
             }
         }

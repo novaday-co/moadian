@@ -13,7 +13,7 @@ class Moadian
 
     protected ApiClient $client;
 
-    public function __construct($username, $privateKey, $baseUri ='https://tp.tax.gov.ir/')
+    public function __construct($username, $privateKey, $baseUri = 'https://tp.tax.gov.ir/')
     {
         $this->username = $username;
         $this->privateKey = $privateKey;
@@ -60,7 +60,8 @@ class Moadian
         return $this->client->getEconomicCodeInformation($taxID);
     }
 
-    public function sendInvoice(Invoice $moadianInvoice){
+    public function sendInvoice(Invoice $moadianInvoice)
+    {
         return $this->client->sendInvoice($moadianInvoice);
     }
 }

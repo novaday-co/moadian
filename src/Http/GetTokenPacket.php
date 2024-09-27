@@ -5,7 +5,8 @@ namespace Novaday\Moadian\Http;
 class GetTokenPacket extends Packet
 {
     //
-    public function __construct(string $username) {
+    public function __construct(string $username)
+    {
         $this->path       = 'req/api/self-tsp/sync/GET_TOKEN';
         $this->packetType = 'GET_TOKEN';
         $this->retry      = false;

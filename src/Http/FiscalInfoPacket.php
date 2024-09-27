@@ -4,7 +4,8 @@ namespace Novaday\Moadian\Http;
 
 class FiscalInfoPacket extends Packet
 {
-    public function __construct(string $username) {
+    public function __construct(string $username)
+    {
         parent::__construct();
 
         $this->path       = 'req/api/self-tsp/sync/GET_FISCAL_INFORMATION';
