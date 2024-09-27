@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - "*.x"
       - develop
   pull_request:
 
