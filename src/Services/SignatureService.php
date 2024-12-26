@@ -32,20 +32,19 @@ class SignatureService
 
         $normalizedData = [];
 
-        $flatted = self::flattener($data);
+        $flatted = self::dot($data);
 
         ksort($flatted);
 
         foreach ($flatted as $value) {
-
-            if (is_bool($value)) {
-                $value = $value ? 'true' : 'false';
-            }
-
-            if ($value === '' || $value === null) {
+            if (blank($value)) {
                 $value = '#';
             } else {
-                $value = strtr($value, [ '#' => '##']);
+                if (blank($value = strval($value))) {
+                    $value = '#';
+                } else {
+                    $value = str_replace('#', '##', $value);
+                }
             }
 
             $normalizedData[] = $value;
@@ -54,16 +53,18 @@ class SignatureService
         return implode("#", $normalizedData);
     }
 
-    private static function flattener(array $array, string $prefix = ''): array
+    private static function dot(array $array, string $prepend = ''): array
     {
-        $flatted = [];
+        $results = [];
+
         foreach ($array as $key => $value) {
-            if (is_array($value)) {
-                $flatted = array_merge($flatted, self::flattener($value, "$prefix.$key"));
+            if (is_array($value) && !empty($value)) {
+                $results = array_merge($results, self::dot($value, $prepend . $key . '.'));
             } else {
-                $flatted["$prefix.$key"] = $value;
+                $results[$prepend . $key] = $value;
             }
         }
-        return $flatted;
+
+        return $results;
     }
 }
