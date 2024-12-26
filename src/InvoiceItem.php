@@ -2,8 +2,12 @@
 
 namespace Novaday\Moadian;
 
-class InvoiceItem
+use Novaday\Moadian\Contracts\Arrayable;
+
+class InvoiceItem implements Arrayable
 {
+    use Concerns\Arrayable;
+
     /**
      * service stuff ID
      */
@@ -154,8 +158,7 @@ class InvoiceItem
      */
     public float $tsstam;
 
-    public function toArray(): array
-    {
-        return get_object_vars($this);
-    }
+    public ?float $cui;
+    public ?float $cpr;
+    public ?int $sovat;
 }

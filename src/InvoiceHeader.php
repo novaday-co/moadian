@@ -3,10 +3,13 @@
 namespace Novaday\Moadian;
 
 use DateTime;
+use Novaday\Moadian\Contracts\Arrayable;
 use Novaday\Moadian\Services\VerhoeffService;
 
-class InvoiceHeader
+class InvoiceHeader implements Arrayable
 {
+    use Concerns\Arrayable;
+
     protected const CHARACTER_TO_NUMBER_CODING = [
         'A' => 65, 'B' => 66, 'C' => 67, 'D' => 68, 'E' => 69, 'F' => 70, 'G' => 71, 'H' => 72, 'I' => 73,
         'J' => 74, 'K' => 75, 'L' => 76, 'M' => 77, 'N' => 78, 'O' => 79, 'P' => 80, 'Q' => 81, 'R' => 82,
@@ -16,7 +19,17 @@ class InvoiceHeader
     /**
      * MOADIAN_USERNAME
      */
-    public string $clientId;
+    protected string $clientId;
+
+    public function getClientId(): string
+    {
+        return $this->clientId;
+    }
+
+    public function setClientId(string $clientId): void
+    {
+        $this->clientId = $clientId;
+    }
 
     /**
      * unique tax ID (should be set by setTaxID )
@@ -119,16 +132,6 @@ class InvoiceHeader
     public ?string $crn;
 
     /**
-     * customs declaration cottage number
-     */
-    public ?string $cdcn;
-
-    /**
-     * customs declaration cottage date
-     */
-    public ?int $cdcd;
-
-    /**
      * billing ID
      */
     public ?string $billid;
@@ -164,21 +167,6 @@ class InvoiceHeader
     public float $tbill;
 
     /**
-     * total net weight
-     */
-    public ?float $tonw;
-
-    /**
-     * total Rial value
-     */
-    public ?float $torv;
-
-    /**
-     * total currency value
-     */
-    public ?float $tocv;
-
-    /**
      * settlement type
      */
     public ?int $setm;
@@ -203,17 +191,59 @@ class InvoiceHeader
      */
     public ?float $tax17;
 
-    public function __construct(string $username = null)
-    {
-        $this->clientId = $username;
-    }
+    /**
+     * customs declaration cottage number
+     */
+    public ?string $cdcn;
 
-    public function toArray(): array
-    {
-        $arr = get_object_vars($this);
-        unset($arr['clientId']);
-        return $arr;
-    }
+    /**
+     * customs declaration cottage date
+     */
+    public ?int $cdcd;
+
+    /**
+     * total net weight
+     */
+    public ?float $tonw;
+
+    /**
+     * total Rial value
+     */
+    public ?float $torv;
+
+    /**
+     * total currency value
+     */
+    public ?float $tocv;
+
+    public ?string $tinc;
+
+    public ?string $lno;
+
+    public ?string $lrno;
+
+    public ?string $ocu;
+
+    public ?string $oci;
+
+    public ?string $dco;
+
+    public ?string $dci;
+
+    public ?string $tid;
+
+    public ?string $rid;
+
+    public ?int $lt;
+
+    public ?string $cno;
+
+    public ?string $did;
+
+    public ?array $sg;
+
+    public ?string $asn;
+    public ?int $asd;
 
     public function setTaxID(DateTime $date, int $internalInvoiceId)
     {
